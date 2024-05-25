@@ -85,7 +85,7 @@ const beforeEditFormModalClose = async (hide: () => unknown) => {
 </script>
 
 <template>
-  <h1 class="page-title">Projects</h1>
+  <h1 class="page-title">Topics</h1>
 
   <VaCard>
     <VaCardContent>
@@ -101,7 +101,7 @@ const beforeEditFormModalClose = async (hide: () => unknown) => {
             ]"
           />
         </div>
-        <VaButton icon="add" @click="createNewProject">Project</VaButton>
+        <VaButton icon="add" @click="createNewProject">Create Topics</VaButton>
       </div>
 
       <ProjectCards
@@ -133,8 +133,8 @@ const beforeEditFormModalClose = async (hide: () => unknown) => {
       hide-default-actions
       :before-cancel="beforeEditFormModalClose"
     >
-      <h1 v-if="projectToEdit === null" class="va-h5 mb-4">Add project</h1>
-      <h1 v-else class="va-h5 mb-4">Edit project</h1>
+      <h1 v-if="projectToEdit === null" class="va-h5 mb-4">Create new topic</h1>
+      <h1 v-else class="va-h5 mb-4">Edit topic</h1>
       <EditProjectForm
         ref="editFormRef"
         :project="projectToEdit"
