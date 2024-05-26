@@ -26,13 +26,6 @@ export default {
       },
     },
     {
-      name: 'Topics',
-      displayName: 'Topics',
-      meta: {
-        icon: 'folder_shared',
-      },
-    },
-    {
       name: 'preferences',
       displayName: 'menu.preferences',
       meta: {

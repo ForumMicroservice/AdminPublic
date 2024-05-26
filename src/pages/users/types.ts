@@ -1,4 +1,3 @@
-import { Project } from '../projects/types'
 export type UserRole = 'admins' | 'users' | 'superadmin'
 
 export type User = {
