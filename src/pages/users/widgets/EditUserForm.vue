@@ -3,7 +3,6 @@ import { PropType, computed, ref, watch } from 'vue'
 import { useForm } from 'vuestic-ui'
 import { User, UserRole } from '../types'
 import UserAvatar from './UserAvatar.vue'
-import { useProjects } from '../../projects/composables/useProjects'
 import { validators } from '../../../services/utils'
 
 const props = defineProps({
@@ -86,7 +85,6 @@ const roleSelectOptions: { text: Capitalize<UserRole>; value: UserRole }[] = [
   { text: 'superadmin', value: 'superadmin' },
 ]
 
-const { projects } = useProjects({ pagination: ref({ page: 1, perPage: 9999, total: 10 }) })
 </script>
 
 <template>
