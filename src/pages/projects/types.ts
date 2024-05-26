@@ -1,7 +1,7 @@
 import { User } from '../users/types'
 
 export type Project = {
-  id: number
+  id: string
   project_name: string
   project_owner: Omit<User, 'projects'>
   team: Omit<User, 'projects'>[]

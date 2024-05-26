@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-
-import AuthLayout from '../layouts/AuthLayout.vue'
+import AuthLayout from '../layouts/AppLayout.vue'
 import AppLayout from '../layouts/AppLayout.vue'
 
 import RouteViewComponent from '../layouts/RouterBypass.vue'
@@ -37,8 +36,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('../pages/users/UsersPage.vue'),
       },
       {
-        name: 'Topics',
-        path: 'topics',
+        name: 'projects',
+        path: 'projects',
         component: () => import('../pages/projects/ProjectsPage.vue'),
       },
     ],
@@ -72,6 +71,11 @@ const routes: Array<RouteRecordRaw> = [
         redirect: { name: 'login' },
       },
     ],
+  },
+  {
+    name: '404',
+    path: '/404',
+    component: () => import('../pages/404.vue'),
   },
 ]
 
