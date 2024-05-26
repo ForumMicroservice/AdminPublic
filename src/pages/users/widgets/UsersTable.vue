@@ -8,11 +8,10 @@ import { useVModel } from '@vueuse/core'
 import { Project } from '../../projects/types'
 
 const columns = defineVaDataTableColumns([
-  { label: 'Full Name', key: 'fullname', sortable: true },
-  { label: 'Email', key: 'email', sortable: true },
   { label: 'Username', key: 'username', sortable: true },
+  { label: 'Email', key: 'email', sortable: true },
   { label: 'Role', key: 'role', sortable: true },
-  { label: 'Projects', key: 'projects', sortable: true },
+  { label: 'Status', key: 'status', sortable: true },
   { label: ' ', key: 'actions', align: 'right' },
 ])
 
@@ -89,16 +88,10 @@ const formatProjectNames = (projects: Project[]) => {
     :items="users"
     :loading="$props.loading"
   >
-    <template #cell(fullname)="{ rowData }">
+    <template #cell(username)="{ rowData }">
       <div class="flex items-center gap-2 max-w-[230px] ellipsis">
         <UserAvatar :user="rowData as User" size="small" />
         {{ rowData.fullname }}
-      </div>
-    </template>
-
-    <template #cell(username)="{ rowData }">
-      <div class="max-w-[120px] ellipsis">
-        {{ rowData.username }}
       </div>
     </template>
 
@@ -112,9 +105,9 @@ const formatProjectNames = (projects: Project[]) => {
       <VaBadge :text="rowData.role" :color="roleColors[rowData.role as UserRole]" />
     </template>
 
-    <template #cell(projects)="{ rowData }">
+    <template #cell(status)="{ rowData }">
       <div class="ellipsis max-w-[300px] lg:max-w-[450px]">
-        {{ formatProjectNames(rowData.projects) }}
+        {{rowData.status }}
       </div>
     </template>
 
