@@ -28,13 +28,13 @@ const onUserSaved = async (user: User) => {
   if (userToEdit.value) {
     await usersApi.update(user)
     notify({
-      message: `${user.fullname} has been updated`,
+      message: `${user.username} has been updated`,
       color: 'success',
     })
   } else {
     usersApi.add(user)
     notify({
-      message: `${user.fullname} has been created`,
+      message: `${user.username} has been created`,
       color: 'success',
     })
   }
@@ -43,7 +43,7 @@ const onUserSaved = async (user: User) => {
 const onUserDelete = async (user: User) => {
   await usersApi.remove(user)
   notify({
-    message: `${user.fullname} has been deleted`,
+    message: `${user.username} has been deleted`,
     color: 'success',
   })
 }
@@ -81,7 +81,7 @@ const beforeEditFormModalClose = async (hide: () => unknown) => {
             border-color="background-element"
             :options="[
               { label: 'Active', value: true },
-              { label: 'Inactive', value: false },
+              { label: 'Banlist', value: false },
             ]"
           />
           <VaInput v-model="filters.search" placeholder="Search">

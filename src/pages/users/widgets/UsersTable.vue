@@ -50,7 +50,7 @@ const { confirm } = useModal()
 const onUserDelete = async (user: User) => {
   const agreed = await confirm({
     title: 'Delete user',
-    message: `Are you sure you want to delete ${user.fullname}?`,
+    message: `Are you sure you want to delete ${user.username}?`,
     okText: 'Delete',
     cancelText: 'Cancel',
     size: 'small',
@@ -91,7 +91,7 @@ const formatProjectNames = (projects: Project[]) => {
     <template #cell(username)="{ rowData }">
       <div class="flex items-center gap-2 max-w-[230px] ellipsis">
         <UserAvatar :user="rowData as User" size="small" />
-        {{ rowData.fullname }}
+        {{ rowData.username }}
       </div>
     </template>
 
