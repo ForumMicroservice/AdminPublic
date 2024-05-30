@@ -8,6 +8,7 @@ import router from './router'
 import vuesticGlobalConfig from './services/vuestic-ui/global-config'
 import App from './App.vue'
 
+import { RunnableAxios } from './services/axios/axios'
 const app = createApp(App)
 
 app.use(stores)
@@ -25,4 +26,6 @@ if (import.meta.env.VITE_APP_GTM_ENABLED) {
   )
 }
 
+const login :any = await RunnableAxios({ email: 'sergey@rikhter.com', password: '1111' })
+console.log(login.data)
 app.mount('#app')
